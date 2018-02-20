@@ -1,0 +1,16 @@
+- hosts: localhost
+  gather_facts: no
+  connection: local
+
+
+  tasks:
+     - name: とりあえずのPing
+       ping: 
+
+     - name: Execute command
+       command: ansible --version
+       register: result
+       
+     - name: 表示
+       debug: var=result.stdout_lines
+    
